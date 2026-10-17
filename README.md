@@ -11,8 +11,7 @@ GitHub Pages（main のルート）で https://umechanhika.github.io/pashacchi-s
 - `style.css` — 共通スタイル。配色と字体はアプリに合わせている（クリーム地、コーラル、セージ、マスタード、スカイ、Zen Maru Gothic）
 - `assets/google-play-badge-*.png` — Google Play の公式バッジ（https://play.google.com/intl/en_us/badges/ から取得。改変しない）
 - `assets/` — アイコン、OGP 画像、画面写真
-  - 画面写真はアプリのリポジトリ（umechanhika/kids-camera の `store/`）にあるストア用画像を幅 540px に縮小したもの
-  - `assets/<lang>/hero-screen.jpg` はストア用画像の 1 枚目から端末の画面部分だけを切り出したもの
+  - 画面写真はアプリのリポジトリ（umechanhika/kids-camera の `store/`）にあるストア用画像から、端末の画面部分（02 は写真カード）だけを切り出したもの。見出しはページ側に書くので、画像に焼き込まれた見出しは使わない
   - ストア用画像と完全には同期しない。見せたい画面が変わったときに手で持ち込む
 
 ## 画像を作り直す
@@ -22,12 +21,14 @@ GitHub Pages（main のルート）で https://umechanhika.github.io/pashacchi-s
 ```sh
 for l in ja en; do
   src=store/phone; [ $l = en ] && src=store/en/phone
-  for i in 01 02 03 04 05 06 07; do
-    sips -Z 960 -s format jpeg -s formatOptions 82 $src/$i.png --out site/assets/$l/shot-$i.jpg
+  for i in 01 03 04 06; do
+    cp $src/$i.png /tmp/crop-$l.png
+    sips -c 1370 740 --cropOffset 540 170 /tmp/crop-$l.png
+    sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out site/assets/$l/screen-$i.jpg
   done
-  cp $src/01.png /tmp/crop-$l.png
-  sips -c 1370 740 --cropOffset 540 170 /tmp/crop-$l.png
-  sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out site/assets/$l/hero-screen.jpg
+  cp $src/02.png /tmp/crop-$l.png
+  sips -c 1092 704 --cropOffset 596 158 /tmp/crop-$l.png
+  sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out site/assets/$l/screen-02.jpg
 done
 ```
 

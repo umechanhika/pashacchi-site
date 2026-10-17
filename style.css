@@ -153,9 +153,11 @@ ol {
 }
 
 .brand {
+  flex: none;
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
   color: var(--ink);
   text-decoration: none;
   font-weight: 700;
@@ -188,13 +190,47 @@ ol {
   margin-left: auto;
 }
 
-.nav + .btn {
-  margin-left: 0;
-}
-
 @media (min-width: 820px) {
   .nav {
     display: flex;
+  }
+
+  /* ナビが見えているときだけ、ボタンはナビの右隣に置く。狭い画面ではナビが無いので右端に寄せる */
+  .nav + .btn {
+    margin-left: 0;
+  }
+}
+
+/* 狭い画面のヘッダー。アプリ名と Play ボタンを 1 行に収めるため、間隔とボタンを詰め、英語は「Get it on」を省く */
+
+@media (max-width: 819px) {
+  .header .wrap {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 399px) {
+  .header .btn {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .header .btn svg,
+  .btn__long {
+    display: none;
+  }
+}
+
+/* 320px 級の狭い画面では、ヘッダーのアプリ名を読み上げ専用にして Play ボタンと重ならないようにする */
+
+@media (max-width: 359px) {
+  .brand__name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 }
 
@@ -363,7 +399,9 @@ ol {
 }
 
 .pair {
+  /* タグ列と本文列の 2 列。「いままで」「パシャっち」のタグ幅が違っても本文の開始位置が揃うよう、タグは共通の列に置く */
   display: grid;
+  grid-template-columns: max-content 1fr;
   gap: 12px;
   padding: 24px;
   border-radius: var(--radius);
@@ -372,9 +410,7 @@ ol {
 
 .pair__before,
 .pair__after {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
+  display: contents;
 }
 
 .pair__tag {
@@ -411,6 +447,20 @@ ol {
 @media (min-width: 820px) {
   .pairs {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 3 列では 1 列が狭いので、タグを本文の上に置いて 1 行を長くする */
+  .pair {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .pair__tag {
+    justify-self: start;
+  }
+
+  .pair__after .pair__tag {
+    margin-top: 12px;
   }
 }
 
@@ -453,11 +503,15 @@ ol {
   font-size: 16px;
 }
 
-.step img {
+.step .phone {
   width: min(220px, 70%);
   margin: 20px auto 0;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
+  padding: 8px;
+  border-radius: 30px;
+}
+
+.step .phone img {
+  border-radius: 22px;
 }
 
 @media (min-width: 820px) {
@@ -521,11 +575,24 @@ ol {
   font-size: 16px;
 }
 
-.feature img {
+.feature > img,
+.feature > .phone {
   width: min(200px, 60%);
   margin: 0 auto;
+}
+
+.feature > img {
   border-radius: 18px;
   box-shadow: var(--shadow);
+}
+
+.feature > .phone {
+  padding: 8px;
+  border-radius: 30px;
+}
+
+.feature .phone img {
+  border-radius: 22px;
 }
 
 @media (min-width: 640px) {
@@ -542,9 +609,15 @@ ol {
     grid-template-columns: 1fr;
   }
 
-  .feature img {
+  .feature > img,
+  .feature > .phone {
     width: 150px;
     margin: 0;
+  }
+
+  /* 特長が奇数個のとき、最後の 1 つは 2 列ぶんに広げて空きを作らない */
+  .feature:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
 
@@ -661,14 +734,6 @@ ol {
   background: var(--sage);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23000'/%3E%3Cpath d='M7 12.5l3 3 7-7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23000'/%3E%3Cpath d='M7 12.5l3 3 7-7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
-}
-
-.plans__note {
-  max-width: 760px;
-  margin: 20px auto 0;
-  text-align: center;
-  color: var(--ink-soft);
-  font-size: 14px;
 }
 
 @media (min-width: 640px) {
@@ -879,4 +944,64 @@ ol {
   padding-left: 1.4em;
   display: grid;
   gap: 4px;
+}
+
+/* 日本語の折り返し。見出しや短い文言は、HTML 側で文節の切れ目に置いた <wbr> だけで改行し、語の途中では切らない。
+   本文の段落は自然に折り返しつつ各行の長さを揃え、末尾に 1〜2 文字だけが残る孤立行を避ける */
+
+:lang(ja) h1,
+:lang(ja) h2,
+:lang(ja) h3,
+:lang(ja) summary,
+:lang(ja) .hero__eyebrow,
+:lang(ja) .hero__lead,
+:lang(ja) .hero__note,
+:lang(ja) .section__head p,
+:lang(ja) .plan li,
+:lang(ja) .plan__sub,
+:lang(ja) .cta p,
+:lang(ja) .footer small {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 見出しは行の長さを揃え、段落は最終行に 1 語だけが残らないようにする（全言語） */
+
+h1,
+h2,
+h3,
+summary {
+  text-wrap: balance;
+}
+
+.hero__lead,
+.pair p,
+.step p,
+.feature p,
+.trust__item p,
+.faq details p,
+.cta p {
+  text-wrap: pretty;
+}
+
+/* 日本語の段落は語の区切りが無く pretty では孤立行を避けられないため、行の長さを揃える方を使う */
+
+:lang(ja) .pair p,
+:lang(ja) .step p,
+:lang(ja) .feature p,
+:lang(ja) .trust__item p,
+:lang(ja) .faq details p {
+  text-wrap: balance;
+}
+
+.btn,
+.plan__price,
+.pair__tag {
+  white-space: nowrap;
+}
+
+/* 段落の結びの語。末尾に 1〜2 文字だけが残らないよう、行をまたがせない */
+
+.nobr {
+  white-space: nowrap;
 }
