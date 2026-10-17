@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://umechanhika.github.io/pashacchi-site/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://umechanhika.github.io/pashacchi-site/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://umechanhika.github.io/pashacchi-site/ja/"/>
+    <loc>https://pashacchi.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/"/>
   </url>
   <url>
-    <loc>https://umechanhika.github.io/pashacchi-site/ja/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://umechanhika.github.io/pashacchi-site/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://umechanhika.github.io/pashacchi-site/ja/"/>
+    <loc>https://pashacchi.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/"/>
   </url>
   <url>
-    <loc>https://umechanhika.github.io/pashacchi-site/privacy/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://umechanhika.github.io/pashacchi-site/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://umechanhika.github.io/pashacchi-site/ja/privacy/"/>
+    <loc>https://pashacchi.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/privacy/"/>
   </url>
   <url>
-    <loc>https://umechanhika.github.io/pashacchi-site/ja/privacy/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://umechanhika.github.io/pashacchi-site/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://umechanhika.github.io/pashacchi-site/ja/privacy/"/>
+    <loc>https://pashacchi.com/ja/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/privacy/"/>
   </url>
 </urlset>
