@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pashacchi - Camera for kids, touch anywhere to shoot</title>
+  <title>Pashacchi | Kids' camera app for Android, touch anywhere to shoot</title>
   <meta name="description" content="Your child shoots, you pick what to keep. An Android app that turns your phone into a kids' camera. No internet, no ads. Only the photos you pick reach your photo app.">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="alternate" hreflang="ja" href="ja/">
   <link rel="alternate" hreflang="en" href="./">
+  <link rel="alternate" hreflang="x-default" href="./">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Pashacchi - Camera for kids, touch anywhere to shoot">
+  <meta property="og:title" content="Pashacchi | Kids' camera app, touch anywhere to shoot">
   <meta property="og:description" content="Your child shoots, you pick what to keep. Photos never leave the phone. No ads.">
   <meta property="og:image" content="https://pashacchi.com/assets/ogp-en.png">
   <meta property="og:url" content="https://pashacchi.com/">
@@ -21,6 +22,112 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // 初めての訪問で、ブラウザの第一言語が日本語なら日本語ページへ。言語切替リンクで選んだ言語は記憶し、以後は尊重する
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search);
+        var picked = q.get("lang");
+        if (picked === "en" || picked === "ja") {
+          localStorage.setItem("lang", picked);
+          q.delete("lang");
+          history.replaceState(null, "", location.pathname + (q.toString() ? "?" + q : "") + location.hash);
+        }
+        var saved = localStorage.getItem("lang");
+        var first = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+        if (saved === "ja" || (!saved && /^ja\b/i.test(first))) {
+          location.replace("ja/" + location.hash);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pashacchi",
+    "operatingSystem": "Android 10 or later",
+    "applicationCategory": "PhotographyApplication",
+    "description": "A kids' camera app for Android. Your child shoots by touching anywhere on the screen, and you pick which photos to keep. No internet, no ads; photos never leave the phone.",
+    "url": "https://pashacchi.com/",
+    "image": "https://pashacchi.com/assets/ogp-en.png",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "installUrl": "https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera",
+    "author": {
+      "@type": "Person",
+      "name": "umechanhika"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which phones does it work on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phones and tablets running Android 10 or later. iPhone and iPad are not supported yet. An iPhone version is in the works. Shooting with both cameras at once works on supported phones only; the welcome screens tell you whether yours is one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my child get back to the home screen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not without holding the small button in the top-right corner for 3 seconds and answering the multiplication shown on screen. Three wrong answers in a row lock the input for a while. If you worry about the phone's own buttons being used to unpin, turn on \"Ask for PIN before unpinning\" in Android settings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are the photos saved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Before picking, only inside the app. Photos you keep are saved to your usual photo app, so they show up in Google Photos and other backups. The rest are deleted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I uninstall the app or switch phones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Photos you haven't picked are lost with the app and don't move to a new phone. Pick and save them first. Saved photos carry over like any other photo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my phone run out of space?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no limit on how many photos can be taken. When free space runs low, the app stops shooting and takes you to the picking screen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I turn off the shutter sound?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, in the settings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need FamilyAlbum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Without it, the \"Send to FamilyAlbum\" button simply doesn't appear."
+        }
+      }
+    ]
+  }
+]
+  </script>
 </head>
 <body>
 
@@ -299,7 +406,7 @@
         <div class="faq">
           <details>
             <summary>Which phones does it work on?</summary>
-            <p>Phones and tablets running Android 10 or later. iPhone and iPad are not supported yet; an iPhone version is in the works. Shooting with both cameras at once works on supported phones only; the welcome screens tell you whether yours is one.</p>
+            <p>Phones and tablets running Android 10 or later. iPhone and iPad are not supported yet. An iPhone version is in the works. Shooting with both cameras at once works on supported phones only; the welcome screens tell you whether yours is one.</p>
           </details>
           <details>
             <summary>Can my child get back to the home screen?</summary>
@@ -345,7 +452,7 @@
       <ul class="footer__links">
         <li><a href="privacy/">Privacy policy</a></li>
         <li><a href="mailto:contact@pashacchi.com">Contact</a></li>
-        <li><a href="ja/" hreflang="ja" lang="ja">日本語</a></li>
+        <li><a href="ja/?lang=ja" hreflang="ja" lang="ja">日本語</a></li>
       </ul>
       <small>Sample photos in the screenshots are from Unsplash. FamilyAlbum is a trademark of MIXI, Inc. Google Play is a trademark of Google LLC.</small>
       <small>&copy; 2026 umechanhika</small>

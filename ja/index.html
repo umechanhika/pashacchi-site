@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>パシャっち - どこを触っても撮れる子ども用カメラ</title>
+  <title>パシャっち｜どこを触っても撮れる、子ども用カメラアプリ（Android）</title>
   <meta name="description" content="撮るのは子ども、残す写真を選ぶのは親。スマホを子ども用カメラにする Android アプリ。通信も広告もなく、選んだ写真だけがいつもの写真アプリに残ります。">
   <link rel="icon" href="../assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="../assets/icon-192.png">
   <link rel="alternate" hreflang="ja" href="./">
   <link rel="alternate" hreflang="en" href="../">
+  <link rel="alternate" hreflang="x-default" href="../">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="パシャっち - どこを触っても撮れる子ども用カメラ">
+  <meta property="og:title" content="パシャっち｜どこを触っても撮れる、子ども用カメラアプリ">
   <meta property="og:description" content="撮るのは子ども、残す写真を選ぶのは親。写真は外に出ない、広告なしの Android 用カメラアプリ。">
   <meta property="og:image" content="https://pashacchi.com/assets/ogp-ja.png">
   <meta property="og:url" content="https://pashacchi.com/ja/">
@@ -21,6 +22,107 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <script>
+    // 言語切替リンクで日本語を選んだことを記憶する（英語ページ側の自動振り分けが尊重する）
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search);
+        var picked = q.get("lang");
+        if (picked === "en" || picked === "ja") {
+          localStorage.setItem("lang", picked);
+          q.delete("lang");
+          history.replaceState(null, "", location.pathname + (q.toString() ? "?" + q : "") + location.hash);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "パシャっち",
+    "operatingSystem": "Android 10 or later",
+    "applicationCategory": "PhotographyApplication",
+    "description": "子どもが画面のどこを触っても撮れて、残す写真は親があとから選ぶ Android 用のカメラアプリ。通信も広告もなく、写真はスマホの外に出ません。",
+    "url": "https://pashacchi.com/ja/",
+    "image": "https://pashacchi.com/assets/ogp-ja.png",
+    "inLanguage": "ja",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "installUrl": "https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera",
+    "author": {
+      "@type": "Person",
+      "name": "umechanhika"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "どんなスマホで使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Android 10 以上のスマホとタブレットで使えます。iPhone と iPad ではまだ使えません。iPhone 版を準備しています。前後同時の撮影は対応機種だけで、はじめの案内で確かめられます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "子どもが勝手にホームに戻れませんか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "右上の小さなボタンを3秒押し、画面に出たかけ算の答えを入力しないと戻れません。3回間違えると、しばらく入力できなくなります。端末のボタンで固定を外されるのが心配なら、Android の設定で「画面固定の解除前に PIN を要求」をオンにしてください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "撮った写真はどこに保存されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "選ぶ前はアプリの中だけです。「残す」にした写真はいつもの写真アプリに保存され、Google フォトなどのバックアップにも載ります。残りはまとめて削除します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "アプリを消したり、機種を変えたりしたらどうなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "選ぶ前の写真はアプリと一緒に消え、機種変更でも引き継がれません。先に選んで保存してください。保存した写真は、ほかの写真と同じように引き継げます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "スマホの容量は大丈夫ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "撮れる枚数に上限はありません。空き容量が少なくなると撮影を止めて、選ぶ画面に案内します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "シャッター音は消せますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "設定で消せます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "みてねを使っていなくても使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使えます。みてねが入っていないスマホでは、「みてねに送る」ボタンが出ないだけです。"
+        }
+      }
+    ]
+  }
+]
+  </script>
 </head>
 <body>
 
@@ -346,7 +448,7 @@
       <ul class="footer__links">
         <li><a href="privacy/">プライバシーポリシー</a></li>
         <li><a href="mailto:contact@pashacchi.com">お問い合わせ</a></li>
-        <li><a href="../" hreflang="en" lang="en">English</a></li>
+        <li><a href="../?lang=en" hreflang="en" lang="en">English</a></li>
       </ul>
       <small>画面写真の中の写真は<wbr>Unsplash&nbsp;のものです。<wbr>「みてね」は<wbr>株式会社MIXIの商標、<wbr>Google&nbsp;Play&nbsp;は<wbr>Google&nbsp;LLC&nbsp;の商標です。</small>
       <small>&copy; 2026 umechanhika</small>
