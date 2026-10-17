@@ -7,6 +7,7 @@ GitHub Pages（main のルート）で https://umechanhika.github.io/pashacchi-s
 
 - `index.html` — 英語（既定。アプリの既定言語に合わせる）
 - `ja/index.html` — 日本語
+- `privacy/index.html`、`ja/privacy/index.html` — プライバシーポリシー（英語・日本語）。Play Console に登録する URL は英語版 https://umechanhika.github.io/pashacchi-site/privacy/
 - `style.css` — 共通スタイル。配色と字体はアプリに合わせている（クリーム地、コーラル、セージ、マスタード、スカイ、Zen Maru Gothic）
 - `assets/google-play-badge-*.png` — Google Play の公式バッジ（https://play.google.com/intl/en_us/badges/ から取得。改変しない）
 - `assets/` — アイコン、OGP 画像、画面写真
@@ -45,4 +46,4 @@ Google Play へのリンクには `referrer=` に UTM を URL エンコードし
 ## 関連
 
 - アプリ本体: umechanhika/kids-camera（非公開）
-- プライバシーポリシー: https://umechanhika.github.io/pashacchi-privacy/
+- 旧プライバシーポリシー: umechanhika/pashacchi-privacy（このリポジトリへ転送するだけのページを残している）

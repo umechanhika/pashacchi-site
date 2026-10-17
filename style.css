@@ -836,3 +836,47 @@ ol {
     margin-left: 0;
   }
 }
+
+/* 規約ページ */
+
+.legal {
+  padding: 40px 0 72px;
+}
+
+.legal .wrap {
+  max-width: 720px;
+}
+
+.legal h1 {
+  font-size: clamp(26px, 5vw, 32px);
+  margin-bottom: 4px;
+}
+
+.legal h2 {
+  font-size: 19px;
+  color: var(--coral);
+  margin: 36px 0 8px;
+}
+
+.legal .meta {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.legal .summary {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  margin-top: 20px;
+}
+
+.legal p + p {
+  margin-top: 10px;
+}
+
+.legal ul {
+  list-style: disc;
+  padding-left: 1.4em;
+  display: grid;
+  gap: 4px;
+}

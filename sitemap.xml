@@ -10,4 +10,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://umechanhika.github.io/pashacchi-site/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://umechanhika.github.io/pashacchi-site/ja/"/>
   </url>
+  <url>
+    <loc>https://umechanhika.github.io/pashacchi-site/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://umechanhika.github.io/pashacchi-site/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://umechanhika.github.io/pashacchi-site/ja/privacy/"/>
+  </url>
+  <url>
+    <loc>https://umechanhika.github.io/pashacchi-site/ja/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://umechanhika.github.io/pashacchi-site/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://umechanhika.github.io/pashacchi-site/ja/privacy/"/>
+  </url>
 </urlset>
