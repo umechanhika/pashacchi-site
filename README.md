@@ -21,7 +21,7 @@ GitHub Pages（main のルート）で https://pashacchi.com/ に公開する。
 ```sh
 for l in ja en; do
   src=store/phone; [ $l = en ] && src=store/en/phone
-  for i in 01 03 04 06; do
+  for i in 01 03 06; do
     cp $src/$i.png /tmp/crop-$l.png
     sips -c 1370 740 --cropOffset 540 170 /tmp/crop-$l.png
     sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out site/assets/$l/screen-$i.jpg
@@ -31,6 +31,8 @@ for l in ja en; do
   sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out site/assets/$l/screen-02.jpg
 done
 ```
+
+`screen-04.jpg`（1枚ずつ大きく見て選ぶ画面）だけは、下のボタンまで見せるためストア用画像からの切り出しではなく、端末の画面写真（`adb exec-out screencap -p`、1080x2424）をそのまま幅 540px に縮小したもの。
 
 ## 手元で確かめる
 
