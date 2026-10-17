@@ -24,15 +24,17 @@ for l in ja en; do
   for i in 01 03 06; do
     cp $src/$i.png /tmp/crop-$l.png
     sips -c 1370 740 --cropOffset 540 170 /tmp/crop-$l.png
-    sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out site/assets/$l/screen-$i.jpg
+    sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out /tmp/screen-$i.jpg
+    cwebp -q 82 -m 6 /tmp/screen-$i.jpg -o site/assets/$l/screen-$i.webp
   done
   cp $src/02.png /tmp/crop-$l.png
   sips -c 1092 704 --cropOffset 596 158 /tmp/crop-$l.png
-  sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out site/assets/$l/screen-02.jpg
+  sips -Z 1000 -s format jpeg -s formatOptions 85 /tmp/crop-$l.png --out /tmp/screen-02.jpg
+  cwebp -q 82 -m 6 /tmp/screen-02.jpg -o site/assets/$l/screen-02.webp
 done
 ```
 
-`screen-04.jpg`（1枚ずつ大きく見て選ぶ画面）だけは、下のボタンまで見せるためストア用画像からの切り出しではなく、端末の画面写真（`adb exec-out screencap -p`、1080x2424）をそのまま幅 540px に縮小したもの。
+`screen-04.webp`（1枚ずつ大きく見て選ぶ画面）だけは、下のボタンまで見せるためストア用画像からの切り出しではなく、端末の画面写真（`adb exec-out screencap -p`、1080x2424）をそのまま幅 540px に縮小したもの。画面写真は転送量を抑えるため WebP（`cwebp`、品質 82）で置く。OGP 画像とバッジは PNG のまま。
 
 ## 手元で確かめる
 
