@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="play-referrer.js" defer></script>
   <script>
     // 初めての訪問で、ブラウザの第一言語が日本語なら日本語ページへ。言語切替リンクで選んだ言語は記憶し、以後は尊重する
     (function () {
@@ -36,7 +37,7 @@
         var saved = localStorage.getItem("lang");
         var first = (navigator.languages && navigator.languages[0]) || navigator.language || "";
         if (saved === "ja" || (!saved && /^ja\b/i.test(first))) {
-          location.replace("ja/" + location.hash);
+          location.replace("ja/" + (q.toString() ? "?" + q : "") + location.hash);
         }
       } catch (e) {}
     })();
