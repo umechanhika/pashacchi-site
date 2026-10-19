@@ -1,0 +1,53 @@
+# このリポジトリは pashacchi.com で配信するファイルだけを置く。
+# 配信物以外（文書・計画・設定ファイル）が紛れ込んでいないか、追跡ファイルの名前と拡張子で検査する。
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  files:
+    name: 配信物以外のファイルがないか
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: 追跡ファイルを許可リストと照らす
+        shell: sh
+        run: |
+          set -eu
+          bad=0
+          git ls-files | LC_ALL=C sort > /tmp/files
+          while IFS= read -r rel; do
+            name=${rel##*/}
+            reason=""
+            case "$rel" in
+              README.md|.gitignore|.github/workflows/check.yml) continue;;
+              .nojekyll) continue;;
+              .*|*/.*) reason="隠しファイル・隠しディレクトリは置かない";;
+            esac
+            if [ -L "$rel" ]; then
+              reason="シンボリックリンクは置かない"
+            fi
+            if [ -z "$reason" ]; then
+              case "$name" in
+                CNAME|robots.txt|sitemap.xml) ;;
+                *.html|*.css|*.js|*.png|*.webp|*.jpg|*.jpeg|*.svg|*.ico|*.woff2) ;;
+                *) reason="配信物として許可していない名前・拡張子";;
+              esac
+            fi
+            if [ -n "$reason" ]; then
+              echo "NG: $rel — $reason"
+              bad=1
+            fi
+          done < /tmp/files
+          if [ "$bad" -ne 0 ]; then
+            echo "配信物以外のファイルがある" >&2
+            exit 1
+          fi
+          echo "OK: 配信物だけ"
