@@ -848,6 +848,75 @@ ol {
   font-size: 13px;
 }
 
+/* Cookie の同意バナー（analytics.js が body の末尾に差し込む） */
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.cookie-banner__inner {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  max-width: 640px;
+  padding: 20px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cookie-banner__text {
+  margin: 0;
+}
+
+.cookie-banner button.btn {
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px 16px;
+}
+
+.cookie-banner__policy {
+  margin-right: auto;
+  color: var(--ink-soft);
+}
+
+.cookie-banner__policy:hover {
+  color: var(--coral);
+}
+
+/* 「同意しない」を「同意する」と同じだけ目立たせる */
+.cookie-banner .btn--ghost {
+  box-shadow: inset 0 0 0 2px var(--coral);
+}
+
+@media (max-width: 480px) {
+  .cookie-banner__policy {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+
+  .cookie-banner__actions .btn {
+    flex: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

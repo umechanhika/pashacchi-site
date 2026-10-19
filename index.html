@@ -23,6 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="play-referrer.js" defer></script>
+  <script async src="analytics.js"></script>
   <script>
     // 初めての訪問で、ブラウザの第一言語が日本語なら日本語ページへ。言語切替リンクで選んだ言語は記憶し、以後は尊重する
     (function () {
@@ -171,7 +172,7 @@
         <a href="#price">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn--small" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-header">
+      <a class="btn btn--small" data-store="google_play" data-position="header" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-header">
         <svg aria-hidden="true"><use href="#ic-play"/></svg>
         <span class="btn__long">Get it on </span>Google&nbsp;Play
       </a>
@@ -191,7 +192,7 @@
             An app that turns your phone into a kids' camera.
           </p>
           <div class="hero__actions">
-            <a class="badge" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-hero">
+            <a class="badge" data-store="google_play" data-position="hero" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-hero">
               <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
             </a>
             <p class="hero__note">Free. Android&nbsp;10 or later. iPhone version in the works.</p>
@@ -453,7 +454,7 @@
       <div class="wrap">
         <img class="cta__icon" src="assets/icon-192.png" alt="" width="96" height="96">
         <h2>Try it on your next outing.</h2>
-        <a class="badge" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-footer-cta">
+        <a class="badge" data-store="google_play" data-position="footer-cta" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-footer-cta">
               <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
             </a>
       </div>
@@ -464,6 +465,7 @@
     <div class="wrap">
       <ul class="footer__links">
         <li><a href="privacy/">Privacy policy</a></li>
+        <li><a href="privacy/#cookies" data-cookie-settings>Cookie settings</a></li>
         <li><a href="mailto:contact@pashacchi.com">Contact</a></li>
         <li><a href="ja/?lang=ja" hreflang="ja" lang="ja">日本語</a></li>
       </ul>

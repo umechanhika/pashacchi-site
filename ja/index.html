@@ -23,6 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="../play-referrer.js" defer></script>
+  <script async src="../analytics.js"></script>
   <script>
     // 言語切替リンクで日本語を選んだことを記憶する（英語ページ側の自動振り分けが尊重する）
     (function () {
@@ -167,7 +168,7 @@
         <a href="#price">料金</a>
         <a href="#faq">よくある質問</a>
       </nav>
-      <a class="btn btn--small" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-header">
+      <a class="btn btn--small" data-store="google_play" data-position="header" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-header">
         <svg aria-hidden="true"><use href="#ic-play"/></svg>
         Google&nbsp;Play&nbsp;で入手
       </a>
@@ -187,7 +188,7 @@
             スマホを<wbr>子ども用カメラにする<wbr>アプリです。
           </p>
           <div class="hero__actions">
-            <a class="badge" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-hero">
+            <a class="badge" data-store="google_play" data-position="hero" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-hero">
               <img src="../assets/google-play-badge-ja.png" alt="Google Play で手に入れよう" width="646" height="250">
             </a>
             <p class="hero__note">無料・Android&nbsp;10&nbsp;以上。<wbr>iPhone&nbsp;版は準備中</p>
@@ -449,7 +450,7 @@
       <div class="wrap">
         <img class="cta__icon" src="../assets/icon-192.png" alt="" width="96" height="96">
         <h2>次のお出かけで、<wbr>渡してみてください。</h2>
-        <a class="badge" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-footer-cta">
+        <a class="badge" data-store="google_play" data-position="footer-cta" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-footer-cta">
               <img src="../assets/google-play-badge-ja.png" alt="Google Play で手に入れよう" width="646" height="250">
             </a>
       </div>
@@ -460,6 +461,7 @@
     <div class="wrap">
       <ul class="footer__links">
         <li><a href="privacy/">プライバシーポリシー</a></li>
+        <li><a href="privacy/#cookies" data-cookie-settings>Cookie の設定</a></li>
         <li><a href="mailto:contact@pashacchi.com">お問い合わせ</a></li>
         <li><a href="../?lang=en" hreflang="en" lang="en">English</a></li>
       </ul>
