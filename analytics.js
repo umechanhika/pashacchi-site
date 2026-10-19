@@ -25,13 +25,13 @@
   });
   var text = {
     en: {
-      body: "This site uses cookies from Google Analytics and Microsoft Clarity to learn how it is visited. You can change your choice any time from “Cookie settings” at the bottom of the page.",
+      body: "We use cookies to analyze site usage and improve this site. You can change this any time under “Cookie settings” at the bottom of the page.",
       policy: "Privacy policy",
       accept: "Accept",
       reject: "Decline"
     },
     ja: {
-      body: "このサイトでは、閲覧のされ方を知るために Google アナリティクスと Microsoft Clarity の Cookie を使います。選んだ内容は、ページの下の「Cookie の設定」からいつでも変えられます。",
+      body: "サイトの改善のため、利用状況の解析に Cookie を使います。ページの下の「Cookie の設定」でいつでも変えられます。",
       policy: "プライバシーポリシー",
       accept: "同意する",
       reject: "同意しない"
