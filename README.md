@@ -8,6 +8,7 @@ GitHub Pages（main のルート）で https://pashacchi.com/ に公開する。
 - `index.html` — 英語（既定。アプリの既定言語に合わせる）
 - `ja/index.html` — 日本語
 - `privacy/index.html`、`ja/privacy/index.html` — プライバシーポリシー（英語・日本語）。Play Console に登録する URL は英語版 https://pashacchi.com/privacy/
+- `play-referrer.js` — このサイトに付いて来た `utm_*` を Google Play リンクの `referrer=` に書き写す（下の「Play へのリンクの流入元」）
 - `style.css` — 共通スタイル。配色と字体はアプリに合わせている（クリーム地、コーラル、セージ、マスタード、スカイ、Zen Maru Gothic）
 - `assets/google-play-badge-*.png` — Google Play の公式バッジ（https://play.google.com/intl/en_us/badges/ から取得。改変しない）
 - `assets/` — アイコン、OGP 画像、画面写真
@@ -47,6 +48,22 @@ python3 -m http.server 8765
 
 Google Play へのリンクには `referrer=` に UTM を URL エンコードして付けている。Play Console の「ユーザー獲得」で、流入元 `pashacchi-site` として集計される。
 `utm_content` は `<言語>-<位置>`（`ja-hero` など）で、どの言語のどのボタンから来たかを分ける。リンクを足すときも同じ形式にする。
+
+### 外からこのサイトへのリンク
+
+このサイトへ飛ばすリンクに `utm_source`（必須）、`utm_medium`、`utm_campaign` を付けると、`play-referrer.js` が
+その値でページ内の Play リンクの `utm_source` / `utm_medium` / `utm_campaign` を上書きする。`utm_content` はボタンの位置のまま残る。
+Play Console では、そのリンク元からインストールした人が `utm_source` の値で集計される。
+
+```
+https://pashacchi.com/ja/?utm_source=umechanhika.com&utm_medium=referral&utm_campaign=works
+```
+
+- 受け取った `utm_*` は同じタブの間だけ `sessionStorage` に持ち、言語を切り替えても引き継ぐ。URL は変えない（アクセス解析が着地 URL の `utm_*` で流入元を取るため）。
+- アクセス解析は LP への流入を、Play の referrer はインストールまでを計測する。役割が違うので両方使う。
+- 英語ページから日本語ページへの自動振り分けはクエリを引き継ぐ。ただし日本語の読者向けなら最初から `/ja/` へ飛ばす。
+- JavaScript が無効なときは、HTML に書いた `pashacchi-site` 発の referrer のまま Play へ行く。
+- 付けているリンク: umechanhika.com の「つくったもの」（`utm_source=umechanhika.com`、`utm_campaign=works`）
 
 ## 関連
 
