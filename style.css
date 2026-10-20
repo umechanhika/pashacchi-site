@@ -831,6 +831,129 @@ ol {
   }
 }
 
+/* キッズカメラとの比較 */
+
+.compare {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.compare th,
+.compare td {
+  padding: 16px 18px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 1.5;
+  border-top: 1px solid var(--cream-deep);
+}
+
+.compare thead th {
+  border-top: 0;
+  background: var(--cream);
+  color: var(--ink-soft);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.compare thead th.compare__us {
+  color: var(--coral);
+}
+
+.compare tbody th {
+  width: 26%;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.compare td.compare__us {
+  background: var(--mustard-soft);
+  font-weight: 700;
+}
+
+.compare__note {
+  max-width: 760px;
+  margin: 24px auto 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 狭い画面では 3 列が収まらないので、1 行を「項目名 + 2 つの値」のカードにする。列見出しは読み上げ用に残し、値には data-label で列名を添える */
+
+@media (max-width: 639px) {
+  .compare thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .compare tbody,
+  .compare tbody th,
+  .compare td {
+    display: block;
+  }
+
+  .compare tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+    padding: 16px 18px;
+    border-top: 1px solid var(--cream-deep);
+  }
+
+  .compare tr:first-child {
+    border-top: 0;
+  }
+
+  .compare tbody th {
+    grid-column: 1 / -1;
+    width: auto;
+    padding: 0;
+    border-top: 0;
+    color: var(--ink);
+    font-size: 15px;
+  }
+
+  .compare td {
+    padding: 10px 12px;
+    border-top: 0;
+    border-radius: var(--radius-sm);
+    background: var(--cream);
+    font-size: 14px;
+  }
+
+  .compare td.compare__us {
+    background: var(--mustard-soft);
+  }
+
+  .compare td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
 /* よくある質問 */
 
 .faq {
