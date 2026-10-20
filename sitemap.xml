@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://pashacchi.com/guide/lock-to-camera/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/guide/lock-to-camera/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/guide/lock-to-camera/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/guide/lock-to-camera/"/>
+  </url>
+  <url>
+    <loc>https://pashacchi.com/ja/guide/lock-to-camera/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/guide/lock-to-camera/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/guide/lock-to-camera/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/guide/lock-to-camera/"/>
+  </url>
+  <url>
+    <loc>https://pashacchi.com/guide/old-phone/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/guide/old-phone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/guide/old-phone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/guide/old-phone/"/>
+  </url>
+  <url>
+    <loc>https://pashacchi.com/ja/guide/old-phone/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/guide/old-phone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/guide/old-phone/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/guide/old-phone/"/>
+  </url>
+  <url>
     <loc>https://pashacchi.com/</loc>
     <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/"/>
@@ -16,14 +44,14 @@
   </url>
   <url>
     <loc>https://pashacchi.com/privacy/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/privacy/"/>
   </url>
   <url>
     <loc>https://pashacchi.com/ja/privacy/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/privacy/"/>
