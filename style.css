@@ -462,15 +462,6 @@ ol {
   border-bottom: 12px solid transparent;
 }
 
-.video figcaption {
-  position: absolute;
-  right: 16px;
-  top: 12px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-}
 
 .video iframe {
   position: absolute;
