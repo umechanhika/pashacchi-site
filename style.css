@@ -391,6 +391,95 @@ ol {
   color: var(--ink-soft);
 }
 
+/* 紹介動画。押すまで YouTube を読み込まない（site/video.js） */
+
+.video {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 44px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video button {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  /* 画像の文字を隠さないよう、ボタンの中身は左下に寄せ、下側だけ暗くする */
+  background: linear-gradient(to top, rgba(74, 59, 54, 0.6), rgba(74, 59, 54, 0) 55%);
+  color: var(--white);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 16px 20px;
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.video__cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.video button:hover .video__icon {
+  background: var(--coral-dark);
+}
+
+.video__icon {
+  position: relative;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.video__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -50%);
+  border-left: 20px solid var(--white);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.video figcaption {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* 悩み → 解決 */
 
 .pairs {

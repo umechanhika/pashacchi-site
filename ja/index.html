@@ -23,6 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="../play-referrer.js" defer></script>
+  <script src="../video.js" defer></script>
   <script async src="../analytics.js"></script>
   <script>
     // 言語切替リンクで日本語を選んだことを記憶する（英語ページ側の自動振り分けが尊重する）
@@ -146,6 +147,17 @@
         }
       }
     ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "パシャっち 紹介動画",
+    "description": "子どもが画面のどこを触っても撮れて、親があとから残す写真を選ぶ。Android 用の子ども用カメラアプリ「パシャっち」の 23 秒の紹介動画。",
+    "thumbnailUrl": "https://pashacchi.com/assets/ogp-ja.png",
+    "uploadDate": "2026-10-04",
+    "duration": "PT23S",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/4LOJJdtbZL0",
+    "inLanguage": "ja"
   }
 ]
   </script>
@@ -269,6 +281,13 @@
           <span class="section__label">使い方</span>
           <h2>渡す、選ぶ、残す。</h2>
         </div>
+        <figure class="video" data-youtube="4LOJJdtbZL0" data-title="パシャっちの紹介動画（23 秒）">
+          <img src="../assets/ogp-ja.png" alt="" width="1024" height="500" loading="lazy">
+          <button type="button" aria-label="紹介動画を再生する（23 秒、YouTube から読み込みます）">
+            <span class="video__cta"><span class="video__icon" aria-hidden="true"></span><span>23&#8288;秒の動画で見る</span></span>
+          </button>
+          <figcaption>再生すると YouTube から読み込みます</figcaption>
+        </figure>
         <ol class="steps">
           <li class="step">
             <span class="step__num">1</span>
