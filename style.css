@@ -913,7 +913,8 @@ ol {
 
   .compare tr {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* 折り返せない語がある側に列幅を奪われないよう、両列の下限を 0 にして等幅を保つ */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 6px 12px;
     padding: 16px 18px;
     border-top: 1px solid var(--cream-deep);
