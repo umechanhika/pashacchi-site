@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pashacchi | Kids' camera app for Android, touch anywhere to shoot</title>
-  <meta name="description" content="Your child shoots, you pick what to keep. An Android app that turns your phone into a kids' camera. No internet, no ads. Only the photos you pick reach your photo app.">
+  <title>Pashacchi | Kids' camera app for Android and iPhone, touch anywhere to shoot</title>
+  <meta name="description" content="Your child shoots, you pick what to keep. An Android and iPhone app that turns your phone into a kids' camera. No internet, no ads. Only the photos you pick reach your photo app.">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/">
@@ -50,9 +50,9 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Pashacchi",
-    "operatingSystem": "Android 10 or later",
+    "operatingSystem": "Android 10 or later, iOS 17 or later (iPhone)",
     "applicationCategory": "PhotographyApplication",
-    "description": "A kids' camera app for Android. Your child shoots by touching anywhere on the screen, and you pick which photos to keep. No internet, no ads; photos never leave the phone.",
+    "description": "A kids' camera app for Android and iPhone. Your child shoots by touching anywhere on the screen, and you pick which photos to keep. No internet, no ads; photos never leave the phone.",
     "url": "https://pashacchi.com/",
     "image": "https://pashacchi.com/assets/ogp-en.png",
     "inLanguage": "en",
@@ -61,7 +61,10 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "installUrl": "https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera",
+    "installUrl": [
+      "https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera",
+      "https://apps.apple.com/app/id6825766253"
+    ],
     "author": {
       "@type": "Person",
       "name": "umechanhika"
@@ -76,7 +79,7 @@
         "name": "Which phones does it work on?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Phones and tablets running Android 10 or later. iPhone and iPad are not supported yet. An iPhone version is in the works. Shooting with both cameras at once works on supported phones only; the welcome screens tell you whether yours is one."
+          "text": "Phones and tablets running Android 10 or later, and iPhones running iOS 17 or later. iPad is not supported yet. Shooting with both cameras at once works on supported phones only; the welcome screens tell you whether yours is one."
         }
       },
       {
@@ -84,7 +87,7 @@
         "name": "Can I use an old phone I no longer use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Any phone running Android 10 or later works, with no SIM and no Wi-Fi. The app never goes online, so you only need a connection to install it and to buy the upgrade; after that it works anywhere. If you worry about drops or loss, an old phone is the one to hand over. The steps are in Turn an old phone into a kids' camera."
+          "text": "Yes. Any phone running Android 10 or later, or any iPhone running iOS 17 or later, works with no SIM and no Wi-Fi. The app never goes online, so you only need a connection to install it and to buy the upgrade; after that it works anywhere. If you worry about drops or loss, an old phone is the one to hand over. The steps are in Turn an old phone into a kids' camera."
         }
       },
       {
@@ -100,7 +103,7 @@
         "name": "Can my child get back to the home screen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not without holding the small button in the top-right corner for 3 seconds and answering the multiplication shown on screen. Three wrong answers in a row lock the input for a while. If you worry about the phone's own buttons being used to unpin, turn on \"Ask for PIN before unpinning\" in Android settings. The full steps are in Lock your phone to the camera before handing it to your child."
+          "text": "Not without holding the small button in the top-right corner for 3 seconds and answering the multiplication shown on screen. Three wrong answers in a row lock the input for a while. To keep your child inside the app, you need a phone setting too. On Android, pin the app and turn on \"Ask for PIN before unpinning\". On iPhone, start Guided Access before handing it over; without it, a swipe up from the bottom leaves the app. The full steps are in Lock your phone to the camera before handing it to your child."
         }
       },
       {
@@ -108,7 +111,7 @@
         "name": "Where are the photos saved?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Before picking, only inside the app. Photos you keep are saved to your usual photo app, so they show up in Google Photos and other backups. The rest are deleted."
+          "text": "Before picking, only inside the app. Photos you keep are saved to your usual photo app, so they show up in backups such as Google Photos and iCloud Photos. The rest are deleted."
         }
       },
       {
@@ -116,7 +119,7 @@
         "name": "What if I uninstall the app or switch phones?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Photos you haven't picked are lost with the app and don't move to a new phone. Pick and save them first. Saved photos carry over like any other photo."
+          "text": "Photos you haven't picked are lost with the app and don't move to a new phone. Pick and save them first. Saved photos carry over like any other photo. The purchase carries over with the same Google account or the same Apple account, but not between Android and iPhone."
         }
       },
       {
@@ -132,7 +135,7 @@
         "name": "Can I turn off the shutter sound?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, in the settings."
+          "text": "On Android, yes, in the settings. On iPhone, no. The app has no setting for it, and in some countries, such as Japan, iPhone always plays the shutter sound."
         }
       },
       {
@@ -140,7 +143,7 @@
         "name": "Do I need FamilyAlbum?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Without it, the \"Send to FamilyAlbum\" button simply doesn't appear."
+          "text": "No. Without it, the \"Send to FamilyAlbum\" button (\"Share\" on iPhone) simply doesn't appear."
         }
       }
     ]
@@ -149,7 +152,7 @@
     "@context": "https://schema.org",
     "@type": "VideoObject",
     "name": "Pashacchi in 23 seconds",
-    "description": "Your child touches anywhere on the screen to shoot, and you pick which photos to keep. A 23-second look at Pashacchi, a kids' camera app for Android.",
+    "description": "Your child touches anywhere on the screen to shoot, and you pick which photos to keep. A 23-second look at Pashacchi, a kids' camera app. The screens shown are from the Android version.",
     "thumbnailUrl": "https://pashacchi.com/assets/ogp-en.png",
     "uploadDate": "2026-10-04T00:00:00+09:00",
     "duration": "PT23S",
@@ -192,10 +195,17 @@
         <a href="#price">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn--small" data-store="google_play" data-position="header" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-header">
+      <a class="btn btn--small" data-os="android" hidden data-store="google_play" data-position="header" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-header">
         <svg aria-hidden="true"><use href="#ic-play"/></svg>
         <span class="btn__long">Get it on </span>Google&nbsp;Play
       </a>
+      <a class="btn btn--small" data-os="ios" hidden data-store="app_store" data-position="header" href="https://apps.apple.com/app/id6825766253?pt=120353633&amp;ct=en-header&amp;mt=8">
+        <span class="btn__long">Download on the </span>App&nbsp;Store
+      </a>
+      <a class="btn btn--small" data-os="other" href="#download">
+        Download
+      </a>
+      <script src="store-switch.js"></script>
     </div>
   </header>
 
@@ -205,17 +215,22 @@
       <span class="blob blob--mustard" aria-hidden="true"></span>
       <div class="wrap">
         <div class="hero__copy">
-          <span class="hero__eyebrow">Kids' camera app for Android</span>
+          <span class="hero__eyebrow">Kids' camera app for Android and iPhone</span>
           <h1>Touch anywhere.<br>Snap.</h1>
           <p class="hero__lead">
             Your child shoots. You pick what to keep.<br>
             An app that turns your phone into a kids' camera.
           </p>
           <div class="hero__actions">
-            <a class="badge" data-store="google_play" data-position="hero" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-hero">
-              <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
-            </a>
-            <p class="hero__note">Free. Android&nbsp;10 or later. iPhone version in the works.</p>
+            <div class="badges">
+              <a class="badge" data-store="google_play" data-position="hero" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-hero">
+                <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
+              </a>
+              <a class="badge badge--app-store" data-store="app_store" data-position="hero" href="https://apps.apple.com/app/id6825766253?pt=120353633&amp;ct=en-hero&amp;mt=8">
+                <img src="assets/app-store-badge-en.svg" alt="Download on the App Store" width="120" height="40">
+              </a>
+            </div>
+            <p class="hero__note">Free. Android&nbsp;10 or later, iPhone with iOS&nbsp;17 or later.</p>
           </div>
         </div>
         <div class="hero__shot">
@@ -254,7 +269,7 @@
             </div>
             <div class="pair__after">
               <span class="pair__tag">Pashacchi</span>
-              <p>The phone stays locked to the camera while shooting. Only someone who can answer a multiplication question gets out.</p>
+              <p>The phone can be locked to the camera while shooting. Only someone who can answer a multiplication question gets out.</p>
             </div>
           </li>
           <li class="pair">
@@ -396,7 +411,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="#b85a49" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
             <div>
               <h3>Only camera and notifications</h3>
-              <p>No access to your photo library, contacts or microphone is requested.</p>
+              <p>No access to your photo library, contacts or microphone is requested. On iPhone, the app also uses "Add Photos Only" to save the photos you pick. It can add photos but cannot see the others.</p>
             </div>
           </li>
         </ul>
@@ -479,11 +494,11 @@
           <div class="plan plan--paid">
             <p class="plan__name">Remove the save limit</p>
             <p class="plan__price">One-time</p>
-            <p class="plan__sub">Pay once. No subscription. Price shown in Google&nbsp;Play</p>
+            <p class="plan__sub">Pay once. No subscription. Price shown in the store</p>
             <ul>
               <li>Save as many photos as you like</li>
               <li>Everything else as in Free</li>
-              <li>Carries over to a new phone with the same Google account</li>
+              <li>Carries over to a new phone with the same Google or Apple account</li>
             </ul>
           </div>
         </div>
@@ -498,11 +513,11 @@
         <div class="faq">
           <details>
             <summary>Which phones does it work on?</summary>
-            <p>Phones and tablets running Android 10 or later. iPhone and iPad are not supported yet. An iPhone version is in the works. Shooting with both cameras at once works on supported phones only; the welcome screens tell you whether yours is one.</p>
+            <p>Phones and tablets running Android 10 or later, and iPhones running iOS 17 or later. iPad is not supported yet. Shooting with both cameras at once works on supported phones only; the welcome screens tell you whether yours is one.</p>
           </details>
           <details>
             <summary>Can I use an old phone I no longer use?</summary>
-            <p>Yes. Any phone running Android 10 or later works, with no SIM and no Wi-Fi. The app never goes online, so you only need a connection to install it and to buy the upgrade; after that it works anywhere. If you worry about drops or loss, an old phone is the one to hand over. The steps are in <a href="guide/old-phone/">Turn an old phone into a kids' camera</a>.</p>
+            <p>Yes. Any phone running Android 10 or later, or any iPhone running iOS 17 or later, works with no SIM and no Wi-Fi. The app never goes online, so you only need a connection to install it and to buy the upgrade; after that it works anywhere. If you worry about drops or loss, an old phone is the one to hand over. The steps are in <a href="guide/old-phone/">Turn an old phone into a kids' camera</a>.</p>
           </details>
           <details>
             <summary>What age is it for?</summary>
@@ -510,15 +525,15 @@
           </details>
           <details>
             <summary>Can my child get back to the home screen?</summary>
-            <p>Not without holding the small button in the top-right corner for 3 seconds and answering the multiplication shown on screen. Three wrong answers in a row lock the input for a while. If you worry about the phone's own buttons being used to unpin, turn on "Ask for PIN before unpinning" in Android settings. The full steps are in <a href="guide/lock-to-camera/">Lock your phone to the camera before handing it to your child</a>.</p>
+            <p>Not without holding the small button in the top-right corner for 3 seconds and answering the multiplication shown on screen. Three wrong answers in a row lock the input for a while. To keep your child inside the app, you need a phone setting too. On Android, pin the app and turn on "Ask for PIN before unpinning". On iPhone, start Guided Access before handing it over; without it, a swipe up from the bottom leaves the app. The full steps are in <a href="guide/lock-to-camera/">Lock your phone to the camera before handing it to your child</a>.</p>
           </details>
           <details>
             <summary>Where are the photos saved?</summary>
-            <p>Before picking, only inside the app. Photos you keep are saved to your usual photo app, so they show up in Google Photos and other backups. The rest are deleted.</p>
+            <p>Before picking, only inside the app. Photos you keep are saved to your usual photo app, so they show up in backups such as Google Photos and iCloud Photos. The rest are deleted.</p>
           </details>
           <details>
             <summary>What if I uninstall the app or switch phones?</summary>
-            <p>Photos you haven't picked are lost with the app and don't move to a new phone. Pick and save them first. Saved photos carry over like any other photo.</p>
+            <p>Photos you haven't picked are lost with the app and don't move to a new phone. Pick and save them first. Saved photos carry over like any other photo. The purchase carries over with the same Google account or the same Apple account, but not between Android and iPhone.</p>
           </details>
           <details>
             <summary>Will my phone run out of space?</summary>
@@ -526,23 +541,28 @@
           </details>
           <details>
             <summary>Can I turn off the shutter sound?</summary>
-            <p>Yes, in the settings.</p>
+            <p>On Android, yes, in the settings. On iPhone, no. The app has no setting for it, and in some countries, such as Japan, iPhone always plays the shutter sound.</p>
           </details>
           <details>
             <summary>Do I need FamilyAlbum?</summary>
-            <p>No. Without it, the "Send to FamilyAlbum" button simply doesn't appear.</p>
+            <p>No. Without it, the "Send to FamilyAlbum" button ("Share" on iPhone) simply doesn't appear.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="cta">
+    <section class="cta" id="download">
       <div class="wrap">
         <img class="cta__icon" src="assets/icon-192.png" alt="" width="96" height="96">
         <h2>Try it on your next outing.</h2>
-        <a class="badge" data-store="google_play" data-position="footer-cta" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-footer-cta">
-              <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
-            </a>
+        <div class="badges">
+          <a class="badge" data-store="google_play" data-position="footer-cta" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-footer-cta">
+            <img src="assets/google-play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
+          </a>
+          <a class="badge badge--app-store" data-store="app_store" data-position="footer-cta" href="https://apps.apple.com/app/id6825766253?pt=120353633&amp;ct=en-footer-cta&amp;mt=8">
+            <img src="assets/app-store-badge-en.svg" alt="Download on the App Store" width="120" height="40">
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -555,7 +575,7 @@
         <li><a href="mailto:contact@pashacchi.com">Contact</a></li>
         <li><a href="ja/?lang=ja" hreflang="ja" lang="ja">日本語</a></li>
       </ul>
-      <small>Sample photos in the screenshots are from Unsplash. FamilyAlbum is a trademark of MIXI, Inc. Google Play is a trademark of Google LLC.</small>
+      <small>Sample photos in the screenshots are from Unsplash. FamilyAlbum is a trademark of MIXI, Inc. Google Play is a trademark of Google LLC. Apple, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</small>
       <small>&copy; 2026 umechanhika</small>
     </div>
   </footer>
