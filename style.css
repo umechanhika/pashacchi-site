@@ -829,6 +829,45 @@ ol {
 
 /* キッズカメラとの比較 */
 
+/* 使っている家の体験談。畳まずに全文を見せる */
+
+.story {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.story__who {
+  font-weight: 700;
+}
+
+.story__note {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.story__body h3 {
+  margin-top: 24px;
+  color: var(--coral);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.story__body p {
+  margin-top: 8px;
+  text-wrap: pretty;
+}
+
+@media (min-width: 640px) {
+  .story {
+    padding: 40px;
+  }
+}
+
 .compare {
   width: 100%;
   max-width: 760px;
