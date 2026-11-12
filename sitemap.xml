@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://pashacchi.com/guide/camera-roll-cleanup/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/guide/camera-roll-cleanup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/guide/camera-roll-cleanup/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/guide/camera-roll-cleanup/"/>
+  </url>
+  <url>
+    <loc>https://pashacchi.com/ja/guide/camera-roll-cleanup/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/guide/camera-roll-cleanup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pashacchi.com/guide/camera-roll-cleanup/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pashacchi.com/ja/guide/camera-roll-cleanup/"/>
+  </url>
+  <url>
     <loc>https://pashacchi.com/guide/lock-to-camera/</loc>
     <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://pashacchi.com/guide/lock-to-camera/"/>
