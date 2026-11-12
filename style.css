@@ -206,11 +206,28 @@ ol {
   }
 }
 
-/* 狭い画面のヘッダー。アプリ名とストアボタンを 1 行に収めるため、間隔とボタンを詰め、英語は「Get it on」「Download on the」を省く */
+/* 狭い画面のヘッダー。読み物ページはアプリ名と言語の切り替えを 1 行に収めるため、間隔とボタンを詰める */
 
 @media (max-width: 819px) {
   .header .wrap {
     gap: 12px;
+  }
+
+  /* LP は狭い画面ではヘッダーを追従させず、ストアボタンを下端に浮かせる（.float-cta）。
+     ヘッダーは親指が届かず、直下のバッジとも重なるため */
+  .header--landing {
+    position: static;
+  }
+
+  .header--landing .btn {
+    display: none;
+  }
+
+  .header--landing .menu-btn {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
   }
 }
 
@@ -219,24 +236,172 @@ ol {
     padding: 0 16px;
     font-size: 14px;
   }
+}
 
-  .header .btn svg,
-  .btn__long {
+/* 下端に浮かせるストアボタン（LP の狭い画面だけ）。
+   store-switch.js が、ほかのストアのバッジもフッターも見えていない間だけ .is-shown を付ける。
+   Cookie の同意バナーが出ている間は出さない。バナーの下から帯の端だけがはみ出すため */
+
+.float-cta {
+  display: none;
+}
+
+@media (max-width: 819px) {
+  .float-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    padding: 10px 16px max(10px, env(safe-area-inset-bottom));
+    background: rgba(251, 246, 241, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 -6px 24px rgba(74, 59, 54, 0.1);
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: transform 0.2s ease, visibility 0.2s;
+  }
+
+  body:not(:has(.cookie-banner)) .float-cta.is-shown {
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.float-cta__inner {
+  display: grid;
+  gap: 6px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ストアボタンを帯の中央に、メニューを右端に置く。左端にはメニューと同じ幅の空きを取り、ストアボタンが中央からずれないようにする */
+.float-cta__row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 8px;
+}
+
+.float-cta .btn {
+  grid-area: 1 / 2;
+  min-height: 52px;
+  padding: 0 16px;
+  font-size: 16px;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.float-cta .menu-btn {
+  grid-area: 1 / 3;
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+}
+
+/* 320px 級の狭い画面では、ストアボタンの文字が 1 行に収まるように、アイコンと英語の「Get it on」「Download on the」を省く */
+@media (max-width: 359px) {
+  .float-cta .btn svg,
+  .float-cta .btn__long {
     display: none;
   }
 }
 
-/* 320px 級の狭い画面では、ヘッダーのアプリ名を読み上げ専用にしてストアボタンと重ならないようにする */
+/* ストアボタンは 3 つあり、store-switch.js が端末に合うものだけを出す。.btn の display より優先させる */
+.float-cta .btn[hidden] {
+  display: none;
+}
 
-@media (max-width: 359px) {
-  .brand__name {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
+/* メニューを開くボタン・閉じるボタン。狭い画面の LP だけで使う（ヘッダーと下端の帯、メニューの中） */
+
+.menu-btn {
+  display: none;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--coral-soft);
+  cursor: pointer;
+}
+
+.menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* メニュー（見出しの一覧）。menu.js が <dialog> として開き、下からせり上がる形で出す */
+
+.menu {
+  width: 100%;
+  max-width: 100%;
+  max-height: 85vh;
+  margin: auto 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.menu::backdrop {
+  background: rgba(74, 59, 54, 0.45);
+}
+
+.menu__inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 20px max(16px, env(safe-area-inset-bottom));
+}
+
+.menu__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.menu__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.menu .menu-btn {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  border-top: 1px solid var(--cream-deep);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.float-cta__note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 /* ヒーロー */
@@ -1170,7 +1335,8 @@ ol {
     scroll-behavior: auto;
   }
 
-  .btn {
+  .btn,
+  .float-cta {
     transition: none;
   }
 }

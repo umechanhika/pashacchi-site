@@ -179,11 +179,11 @@
     </defs>
   </svg>
 
-  <header class="header">
+  <header class="header header--landing">
     <div class="wrap">
       <a class="brand" href="#top">
         <img src="../assets/icon-192.png" alt="" width="36" height="36">
-        <span class="brand__name">パシャっち</span>
+        パシャっち
       </a>
       <nav class="nav" aria-label="ページ内">
         <a href="#why">困りごと</a>
@@ -194,6 +194,7 @@
         <a href="#faq">よくある質問</a>
         <a href="#guides">ガイド</a>
       </nav>
+      <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-controls="menu" aria-label="メニュー"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <a class="btn btn--small" data-os="android" hidden data-store="google_play" data-position="header" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-header">
         <svg aria-hidden="true"><use href="#ic-play"/></svg>
         Google&nbsp;Play&nbsp;で入手
@@ -204,7 +205,6 @@
       <a class="btn btn--small" data-os="other" href="#download">
         ダウンロード
       </a>
-      <script src="../store-switch.js"></script>
     </div>
   </header>
 
@@ -641,6 +641,44 @@
       <small>&copy; 2026 umechanhika</small>
     </div>
   </footer>
+
+  <div class="float-cta">
+    <div class="float-cta__inner">
+      <div class="float-cta__row">
+        <a class="btn" data-os="android" hidden data-store="google_play" data-position="floating" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Dja-floating">
+          <svg aria-hidden="true"><use href="#ic-play"/></svg>
+          Google&nbsp;Play&nbsp;で入手
+        </a>
+        <a class="btn" data-os="ios" hidden data-store="app_store" data-position="floating" href="https://apps.apple.com/jp/app/id6825766253?pt=120353633&amp;ct=ja-floating&amp;mt=8">
+          App&nbsp;Store&nbsp;で入手
+        </a>
+        <a class="btn" data-os="other" href="#download">
+          ダウンロード
+        </a>
+        <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-controls="menu" aria-label="メニュー"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <p class="float-cta__note">基本は無料・<wbr>広告なし・<wbr>写真は外に出ません</p>
+    </div>
+  </div>
+  <dialog class="menu" id="menu" aria-label="メニュー">
+    <div class="menu__inner">
+      <div class="menu__head">
+        <p class="menu__title">メニュー</p>
+        <button class="menu-btn" type="button" data-menu-close aria-label="閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <ul>
+        <li><a href="#why">困りごと</a></li>
+        <li><a href="#how">使い方</a></li>
+        <li><a href="#features">特長</a></li>
+        <li><a href="#trust">安心</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#guides">ガイド</a></li>
+      </ul>
+    </div>
+  </dialog>
+  <script src="../store-switch.js"></script>
+  <script src="../menu.js"></script>
 
 </body>
 </html>

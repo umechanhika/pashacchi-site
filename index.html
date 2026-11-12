@@ -181,11 +181,11 @@
     </defs>
   </svg>
 
-  <header class="header">
+  <header class="header header--landing">
     <div class="wrap">
       <a class="brand" href="#top">
         <img src="assets/icon-192.png" alt="" width="36" height="36">
-        <span class="brand__name">Pashacchi</span>
+        Pashacchi
       </a>
       <nav class="nav" aria-label="On this page">
         <a href="#why">The problem</a>
@@ -196,17 +196,17 @@
         <a href="#faq">FAQ</a>
         <a href="#guides">Guides</a>
       </nav>
+      <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-controls="menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <a class="btn btn--small" data-os="android" hidden data-store="google_play" data-position="header" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-header">
         <svg aria-hidden="true"><use href="#ic-play"/></svg>
-        <span class="btn__long">Get it on </span>Google&nbsp;Play
+        Get it on Google&nbsp;Play
       </a>
       <a class="btn btn--small" data-os="ios" hidden data-store="app_store" data-position="header" href="https://apps.apple.com/app/id6825766253?pt=120353633&amp;ct=en-header&amp;mt=8">
-        <span class="btn__long">Download on the </span>App&nbsp;Store
+        Download on the App&nbsp;Store
       </a>
       <a class="btn btn--small" data-os="other" href="#download">
         Download
       </a>
-      <script src="store-switch.js"></script>
     </div>
   </header>
 
@@ -643,6 +643,44 @@
       <small>&copy; 2026 umechanhika</small>
     </div>
   </footer>
+
+  <div class="float-cta">
+    <div class="float-cta__inner">
+      <div class="float-cta__row">
+        <a class="btn" data-os="android" hidden data-store="google_play" data-position="floating" href="https://play.google.com/store/apps/details?id=com.umechanhika.kidscamera&amp;referrer=utm_source%3Dpashacchi-site%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding%26utm_content%3Den-floating">
+          <svg aria-hidden="true"><use href="#ic-play"/></svg>
+          <span><span class="btn__long">Get it on </span>Google&nbsp;Play</span>
+        </a>
+        <a class="btn" data-os="ios" hidden data-store="app_store" data-position="floating" href="https://apps.apple.com/app/id6825766253?pt=120353633&amp;ct=en-floating&amp;mt=8">
+          <span><span class="btn__long">Download on the </span>App&nbsp;Store</span>
+        </a>
+        <a class="btn" data-os="other" href="#download">
+          Download
+        </a>
+        <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-controls="menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <p class="float-cta__note">Free to use · <wbr>No ads · <wbr>Photos stay on your phone</p>
+    </div>
+  </div>
+  <dialog class="menu" id="menu" aria-label="Menu">
+    <div class="menu__inner">
+      <div class="menu__head">
+        <p class="menu__title">Menu</p>
+        <button class="menu-btn" type="button" data-menu-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <ul>
+        <li><a href="#why">The problem</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#trust">Privacy</a></li>
+        <li><a href="#price">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#guides">Guides</a></li>
+      </ul>
+    </div>
+  </dialog>
+  <script src="store-switch.js"></script>
+  <script src="menu.js"></script>
 
 </body>
 </html>
