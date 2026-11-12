@@ -1355,8 +1355,25 @@ ol {
 }
 
 .hero__shot .phone {
+  position: relative;
   width: min(300px, 100%);
   margin: 0 auto;
+}
+
+/* 撮影画面のループ動画。画像の真上に重ね、再生が始まってから見せる（site/hero-loop.js） */
+
+.hero__loop {
+  position: absolute;
+  inset: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  border-radius: 34px;
+  object-fit: cover;
+  visibility: hidden;
+}
+
+.hero__loop.is-playing {
+  visibility: visible;
 }
 
 .feature--text {
