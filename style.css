@@ -1197,6 +1197,51 @@ ol {
   align-content: start;
 }
 
+/* LP の読み物の一覧。カード全体がリンク。見出しは着地ページの見出しと同じ文言にする */
+
+.guide-cards {
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-card {
+  display: block;
+  height: 100%;
+  padding: 20px 24px;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.guide-card:hover h3,
+.guide-card:focus-visible h3 {
+  color: var(--coral);
+  text-decoration: underline;
+}
+
+.guide-card h3 {
+  font-size: 17px;
+}
+
+.guide-card__time {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+@media (min-width: 640px) {
+  .guide-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
 /* ストアの公式バッジ。画像は改変せず、高さだけを決める。
    英語版の Google Play の画像は上下左右に余白を含み、高さ 68px のうち見える部分は 46px ほど。
    App Store の画像は余白を含まないので、見える高さを 46px にそろえ、同じだけ外側を空ける */
